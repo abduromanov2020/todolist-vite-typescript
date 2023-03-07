@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --primary-color:#fefae0;
+  --secondary-color:#bc6c25;
+  --third-color:#a65831;
+}
 
 * {
     margin: 0;
@@ -14,16 +20,17 @@
 input, 
 button {
     font: inherit;
+    font-weight: bold;
 }
 
 html {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', cursive;
 }
 
 body {
     min-height: 100vh;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -33,15 +40,17 @@ main {
     flex-grow: 1;
     margin: auto;
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
     display: flex;
     flex-flow: column nowrap;
+    padding: 2rem;
 }
 
 section {
-    border: 1px solid whitesmoke;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 0.5rem;
+    background-color: #fff;
 }
 
 .button {
@@ -63,31 +72,35 @@ section {
 .newItemEntry__form {
     display: flex;
     gap: 0.25rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .newItemEntry__input {
     width: calc(100% - (0.25rem + 48px));
     flex-grow: 1;
-    border: 2px solid whitesmoke;
+    border: 2px solid var(--secondary-color);
+    color:var(--secondary-color);
     border-radius: 10px;
     padding: 0.5em;
 }
 
 .newItemEntry__button {
-    background-color: transparent;
-    color: whitesmoke;
-    border: 3px dashed whitesmoke;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
     padding: 0.75em;
 }
 
-.newItemEntry__button:hover,
 .newItemEntry__button:focus {
-    color: limegreen;
+    color: var(--secondary-color);
+}
+
+.newItemEntry__button:hover {
+    background-color: var(--third-color);
 }
 
 .listContainer {
-    font-size: 1.5rem;
+    font-size: 1rem;
     flex-grow: 1;
     display: flex;
     flex-flow: column;
@@ -97,13 +110,19 @@ section {
 .listTitle {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .listTitle__button {
-    background-color: transparent;
-    color: whitesmoke;
-    padding: 0.25em;
+    border: none;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 0.7rem;
+}
+
+.listTitle__button:hover {
+  background-color:var(--third-color);
+
 }
 
 
@@ -123,9 +142,11 @@ section {
 
 .item > input[type="checkbox"] {
     text-align: center;
-    min-width: 2.5rem;
-    min-height: 2.5rem;
+    border:2px solid var(--secondary-color) !important;
+    min-width: 1.2rem;
+    min-height: 1.2rem;
     cursor: pointer;
+    margin-right: -8px;
 }
 
 .item > input[type="checkbox"]:checked + label {
@@ -137,9 +158,21 @@ section {
     word-break: break-all;
 }
 
+.item > button {
+  border: none;
+  border:2px solid var(--secondary-color);
+  background-color: transparent;
+  color: var(--secondary-color);
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: 5px;
+  padding:0 1rem;
+}
+
 .item > button:hover, 
 .item > button:focus {
-    color: red;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
